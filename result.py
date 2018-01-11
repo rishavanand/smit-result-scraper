@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from pprint import pprint
 import re
 import json
-import student_result
 import sys
 
 def exam_name(url):
@@ -134,7 +133,7 @@ def fetch_result(url):
 
 def main():
 	
-	url = "https://results.smu.edu.in/smit/results_grade_selection.php?exam=33"
+	url = input('Paste SMIT exam link : ')
 	exam_id = url.split('=')[1]
 	final_result = {}
 	final_result['exam_name'] = exam_name(url)

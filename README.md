@@ -1,10 +1,10 @@
 # SMIT Result Scraper
 
-* Requires Python3
-
 This script scraps results of all students from the SMIT's result site for the given semester and saves it in a JSON format.
 
 Note : This scraps results of all students irrespective of the current academic year and courses opted by them.
+
+**Requires Python version 3+**
 
 <hr>
 

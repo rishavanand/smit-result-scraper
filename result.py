@@ -49,6 +49,7 @@ def subjects(url):
 		subjects[subject_code] = {}
 		subjects[subject_code]['name'] = tmplink[1].strip()
 		subjects[subject_code]['link'] = 'https://results.smu.edu.in/smit/' + link.get('href')
+		break
 
 	return subjects
 
@@ -143,7 +144,7 @@ def main():
 	# Accumulate all student results
 	all_results = {}
 	for subject in final_result['subjects']:
-		#file_data = results[subject]
+		final_result['subjects'][subject]['credit'] = results[subject]['subject_credit']
 		for result in results[subject]['results']:
 			try:
 				all_results[result[0]]
@@ -153,11 +154,12 @@ def main():
 
 	final_result['results'] = all_results
 
+
 	# Save all scraped data
 	subject_file = open(exam_id + '.json', 'w')
 	subject_file.write(json.dumps(final_result))
 	subject_file.close()
 
-	print("Done!")
+	print(" - Done!")
 
 main()

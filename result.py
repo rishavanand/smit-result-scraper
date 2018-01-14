@@ -49,8 +49,7 @@ def subjects(url):
 		subjects[subject_code] = {}
 		subjects[subject_code]['name'] = tmplink[1].strip()
 		subjects[subject_code]['link'] = 'https://results.smu.edu.in/smit/' + link.get('href')
-		break
-
+		
 	return subjects
 
 def subject_results(subjects):
@@ -149,8 +148,8 @@ def main():
 			try:
 				all_results[result[0]]
 			except:
-				all_results[result[0]] = []
-			all_results[result[0]].append({subject: result[4]})
+				all_results[result[0]] = {}
+			all_results[result[0]][subject] = result[4]
 
 	final_result['results'] = all_results
 

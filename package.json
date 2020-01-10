@@ -1,0 +1,47 @@
+{
+    "name": "smit-result-scraper",
+    "version": "2.0.0",
+    "author": {
+        "name": "Rishav Anand",
+        "email": "hello@rishavanand.com",
+        "url": "https://rishavanand.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:rishavanand/smit-result-scraper.git"
+    },
+    "scripts": {
+        "build": "ts-node --files ./util/build.ts",
+        "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+        "start": "node ./dist",
+        "container:dev": "ts-node -r tsconfig-paths/register ./src --env=development",
+        "start:dev": "ts-node src/index.ts"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
+    },
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.3",
+        "mongoose": "^5.9.20",
+        "node-fetch": "^2.6.0",
+        "winston": "^3.2.1"
+    },
+    "devDependencies": {
+        "@types/cheerio": "^0.22.18",
+        "@types/mongoose": "^5.7.28",
+        "@types/node": "^12.12.14",
+        "@types/node-fetch": "^2.5.7",
+        "@typescript-eslint/eslint-plugin": "^2.27.0",
+        "@typescript-eslint/parser": "^2.27.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "fs-extra": "^9.0.1",
+        "prettier": "^2.0.4",
+        "ts-node": "^8.5.4",
+        "tsconfig-paths": "^3.9.0",
+        "typescript": "^3.9.5"
+    }
+}

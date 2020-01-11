@@ -24,12 +24,13 @@
     },
     "dependencies": {
         "cheerio": "^1.0.0-rc.3",
-        "mongoose": "^5.9.20",
+        "md5": "^2.2.1",
         "node-fetch": "^2.6.0",
         "winston": "^3.2.1"
     },
     "devDependencies": {
         "@types/cheerio": "^0.22.18",
+        "@types/md5": "^2.2.0",
         "@types/mongoose": "^5.7.28",
         "@types/node": "^12.12.14",
         "@types/node-fetch": "^2.5.7",

@@ -1,19 +1,26 @@
-export type Branch = {
-    id?: string;
-    name?: string;
+export type SingleSubjectResult = {
+    [regId: string]: string[];
 };
 
-export type Exam = {
-    name?: string;
-    id?: string;
-    link?: string;
-    branches?: Branch[];
+export type BranchResult = {
+    [regId: string]: { [subId: string]: string[] };
 };
 
-export type ExamList = {
-    createdAt?: string;
-    updatedAt?: string;
-    checkedAt?: string;
-    exams?: Exam[];
-    lastContentHash?: string;
+export type Subjects = {
+    [id: string]: string;
+};
+
+export type Branches = {
+    [id: string]: {
+        name?: string;
+        subjects?: Subjects;
+        results?: BranchResult;
+    };
+};
+
+export type Exams = {
+    [id: string]: {
+        name?: string;
+        branches?: Branches;
+    };
 };

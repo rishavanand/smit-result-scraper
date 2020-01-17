@@ -10,12 +10,14 @@ export type Subjects = {
     [id: string]: string;
 };
 
+export type Branch = {
+    name?: string;
+    subjects?: Subjects;
+    results?: BranchResult;
+};
+
 export type Branches = {
-    [id: string]: {
-        name?: string;
-        subjects?: Subjects;
-        results?: BranchResult;
-    };
+    [id: string]: Branch;
 };
 
 export type Exams = {
